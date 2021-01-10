@@ -57,12 +57,13 @@ weather = pd.DataFrame({
     "temp": temps,
     "desc": descs
 })
-print(weather)
+# print(weather)
 
 
 # Data Analysis
 # Regular Expression to pull out numeric values
-temp_nums = weather["temp"].str.extract("(?P<temp_num>d+)", expand=False)
-print(temp_nums)
+# BUG: UPDATE REGULAR EXPRESSION
+#temp_nums = weather["temp"].str.extract("(?P<temp_num>d+)", expand=False)
+# print(temp_nums)
 #weather["temp_num"] = temp_nums.astype('int')
 # print(temp_nums)
