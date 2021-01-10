@@ -62,8 +62,15 @@ weather = pd.DataFrame({
 
 # Data Analysis
 # Regular Expression to pull out numeric values
-# BUG: UPDATE REGULAR EXPRESSION
-#temp_nums = weather["temp"].str.extract("(?P<temp_num>d+)", expand=False)
-# print(temp_nums)
-#weather["temp_num"] = temp_nums.astype('int')
-# print(temp_nums)
+temp_nums = weather["temp"].str.extract("(\d+)", expand=False)
+print(temp_nums)
+weather["temp_num"] = temp_nums.astype('int')
+print(temp_nums)
+
+# Mean of high and low temperatures
+print(weather["temp_num"].mean())
+
+
+is_night = weather["temp"].str.contains("Low")
+weather["is_night"] = is_night
+print(is_night)
